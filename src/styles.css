@@ -1,0 +1,59 @@
+*,*::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Reueseable */
+
+.flex{
+    display: flex;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.flex-col{
+    flex-direction: column;
+}
+
+/* Header / Banner */
+
+.banner{
+    width: 500px;
+}
+.banner h1{
+    font-size: 2.5rem;
+}
+.banner p{
+    font-size: 1.2rem;
+    align-self: center;
+    margin-left: 9em;
+}
+
+header{
+    background-color: darkgray;
+    height: 200px;
+}
+
+/* Search bar */
+#search{
+    width: 462px;
+    position: relative;
+    top: -1rem;
+}
+#search input{
+    padding: 0.5em;
+    font-family: 'Inter', sans-serif;
+}
+#movieSearch{
+    flex: 2 1 350px;
+}
+#search input[type=submit]{
+    flex: 1 120px
+}
