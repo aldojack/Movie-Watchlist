@@ -57,3 +57,27 @@ header{
 #search input[type=submit]{
     flex: 1 120px
 }
+
+/* Movie Results */
+
+#results{
+    width: 500px;
+}
+
+.movie-container{
+    margin-top: 2.5em;
+}
+
+.movie-poster{
+    min-height: 140px;
+    min-width: 100px;
+}
+
+.movie-poster img{
+    height: 100%;
+    width: 100%;
+}
+
+.movie-information{
+    margin-left: 1.75em;
+}
