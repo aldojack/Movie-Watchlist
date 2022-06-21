@@ -61,7 +61,7 @@ header{
 /* Movie Results */
 
 #results{
-    width: 500px;
+    width: 550px;
 }
 
 .movie-container{
@@ -79,5 +79,41 @@ header{
 }
 
 .movie-information{
+    row-gap: 0.4em;
     margin-left: 1.75em;
+}
+.movie-information .rating{
+    margin-left: 1em;
+    font-weight: 400;
+}
+
+.movie-information .movie-desc{
+    line-height: 1.5em;
+}
+
+.movie-additional{
+    align-items: center;
+}
+
+.movie-additional span{
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-left: 0.5em;
+}
+
+.movie-additional .genre{
+    margin-left: 3em;
+    flex-basis: 200px;
+}
+
+.watchlist{
+    cursor: pointer;
+}
+.watchlist:hover, .watchlist:focus, .watchlist:active{
+    background-color: aqua;
+}
+
+.watchlist p{
+    margin-left: 0.5em;
 }

@@ -3,7 +3,7 @@ Solo Project inspired from Scrima's frontend web developer course
 
 ## Start
 - Figma design - Design for the movie website - https://www.figma.com/file/jhFRdFIdHpRxsDznNXtpXw/Movie-Watchlist?node-id=2%3A17
-- OMDb API - Movie API - https://www.omdbapi.com/
+- OMDb API - Movie API - https://www.omdbapi.com/'
 
 ## Requirements
 - Two pages - index.html and watchlist.html. 
