@@ -71,16 +71,24 @@ const getMovie = async ({imdbID}) => {
     const runTime = createElement('p', { class: ['runtime'], text: Runtime });
     const genre = createElement('p', { class: ['genre'], text: Genre });
     const watchlist = createElement('div', { class: ['watchlist', 'flex'] });
-    const icon = createElement('i', { class: ['fa-solid', 'fa-circle-plus', 'watchlist'], role: 'button', value: Title });
+    const icon = createElement('i', { class: ['fa-solid'], role: 'button', value: Title });
+    localWatchlist.includes(Title) ? icon.classList.add('fa-heart') : icon.classList.add('fa-circle-plus')
     const span = createElement('p', { text: "Watchlist" });
     watchlist.append(icon, span);
     const moviePlot = createElement('p', { class: ['movie-desc'], text: Plot})
     
-    icon.addEventListener('click', (event) => {
-        console.log(event);
-        localWatchlist.push(Title);
-        localStorage.setItem("watchlist", JSON.stringify(localWatchlist))
-        console.log(localStorage.getItem('watchlist'))
+    watchlist.addEventListener('click', () => {
+        //If Title is in the local storage then remove
+        if (localWatchlist.includes(Title)) {
+            localWatchlist.pop(Title)
+            localStorage.setItem("watchlist", JSON.stringify(localWatchlist))
+            icon.classList.replace('fa-heart', 'fa-circle-plus');
+        }
+        else {
+            localWatchlist.push(Title);
+            localStorage.setItem("watchlist", JSON.stringify(localWatchlist))
+            icon.classList.replace('fa-circle-plus', 'fa-heart')
+        }
     })
     movieAddInfo.append(runTime,genre, watchlist)
     movieInfoDiv.append(movieTitle,movieAddInfo, moviePlot);

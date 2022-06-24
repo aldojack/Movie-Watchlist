@@ -117,3 +117,8 @@ header{
 .watchlist p{
     margin-left: 0.5em;
 }
+
+.fa-heart{
+    font-family: FontAwesome;
+    color: red;
+}
