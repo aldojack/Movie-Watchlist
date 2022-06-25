@@ -26,18 +26,26 @@
 
 .banner{
     width: 500px;
+    justify-content: space-around;
 }
 .banner h1{
     font-size: 2.5rem;
 }
-.banner p{
+.banner a{
     font-size: 1.2rem;
     align-self: center;
-    margin-left: 9em;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.banner a:hover{
+    text-decoration: underline;
 }
 
 header{
-    background-color: darkgray;
+    background-color: black;
+    color: white;
     height: 200px;
 }
 
@@ -121,4 +129,24 @@ header{
 .fa-heart{
     font-family: FontAwesome;
     color: red;
+}
+
+/* Placeholder and Error */
+#results #placeholder{
+    height: 50vh;
+    justify-content: center;
+    opacity: 0.1;
+
+}
+
+.placeholder i {
+    font-family: FontAwesome;
+    color: black;
+    font-size: 10rem;
+    align-self: center;
+}
+
+.placeholder p{
+    font-weight: 900;
+    font-size: 2rem;
 }

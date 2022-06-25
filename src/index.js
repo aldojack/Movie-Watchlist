@@ -6,6 +6,7 @@ let searchValue = '';
 const searchField = document.getElementById('movieSearch');
 const searchBtn = document.getElementById("SearchBtn");    
 const resultsContainer = document.getElementById('results');
+const placeholder = document.getElementById('placeholder');
 let localWatchlist = [];
 const storedLocalStorage = JSON.parse(localStorage.getItem("watchlist"))
 
@@ -34,6 +35,7 @@ const setValue = (event) => {
 
         //If results found then do this
         if (Response) {
+            placeholder.style.display = "none";
             console.log("Search results: ", Search);
 
             for (let movie of Search) {
