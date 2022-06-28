@@ -44,10 +44,17 @@
 }
 
 header{
-    background-color: black;
     color: white;
-    height: 200px;
+    background-image: url(../images/andre-tan-THJJRUhNlEc-unsplash.jpg);
+    background-blend-mode: darken;
+    background-color: #000000af;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 25%;
 }
+
+
 
 /* Search bar */
 #search{
@@ -74,20 +81,27 @@ header{
 
 .movie-container{
     margin-top: 2.5em;
+    border-bottom: 1px solid;
+    padding-bottom: 1em;
+    height: 335px;
 }
 
 .movie-poster{
-    min-height: 140px;
-    min-width: 100px;
+    width: 45%;
 }
-
 .movie-poster img{
-    height: 100%;
     width: 100%;
-}
+    height: 100%;
+} 
+
+.movie-poster img[src="./images/no-poster.jpg"]{
+    object-fit: contain;
+} 
+
 
 .movie-information{
     row-gap: 0.4em;
+    width: 55%;
     margin-left: 1.75em;
 }
 .movie-information .rating{
@@ -149,4 +163,40 @@ header{
 .placeholder p{
     font-weight: 900;
     font-size: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        height: 250px;
+    }
+
+    #results{
+        width: 470px;
+    }
+
+    .movie-container{
+        justify-content: space-evenly;
+    }
+
+    .movie-poster{
+        width: 35%;
+    }
+    .movie-information{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    header {
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    header {
+        height: 350px;
+    }
+    #results{
+        width: 750px;
+    }
 }

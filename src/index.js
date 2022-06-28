@@ -10,16 +10,10 @@ const placeholder = document.getElementById('placeholder');
 let localWatchlist = [];
 const storedLocalStorage = JSON.parse(localStorage.getItem("watchlist"))
 
+    
 if (storedLocalStorage) {
     localWatchlist = storedLocalStorage;
 }
-/*
-Local storange clearing after refresh
-const locStorage = localStorage.getItem('watchlist');
-let localWatchlist;
-
-localStorage ? localWatchlist = locStorage : localWatchlist = [];
-*/
 
 const setValue = (event) => {
     searchValue = event.target.value.toLowerCase();
@@ -32,24 +26,28 @@ const setValue = (event) => {
     const searchMovie = async () => {
         const res = await fetch(`https://www.omdbapi.com/?apikey=${api}&s=${searchValue}`);
         const { Response, Search } = await res.json();
-
+        console.log(Response)
+        console.log(Search)
         //If results found then do this
-        if (Response) {
-            placeholder.style.display = "none";
-            console.log("Search results: ", Search);
-
+        
+        if (Response === 'True') {
+            renderPage();
             for (let movie of Search) {
                 getMovie(movie);
-            }
+            }               
         }
         //Else print the results to screen
         else {
-            console.log("No result found")
+            const errorMessage = document.getElementById('placeholderText');
+            errorMessage.textContent = `No results found for ${searchValue}`
+            placeholder.appendChild(errorMessage);
+            searchField.value = '';
         }
     }
     
 const getMovie = async ({imdbID}) => {
-    const res = await fetch(`https://www.omdbapi.com/?apikey=${api}&i=${imdbID}&plot=full`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${api}&i=${imdbID}`);
+
     const { Title, Runtime, Genre, imdbRating, Plot, Poster } = await res.json();
 
     //Create the movie and add to the DOM
@@ -97,6 +95,10 @@ const getMovie = async ({imdbID}) => {
 
     movieContainer.append(posterDiv,movieInfoDiv); 
 
+}
+
+const renderPage = () => {
+    resultsContainer.replaceChildren();
 }
 
 
