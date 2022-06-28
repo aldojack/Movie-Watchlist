@@ -7,7 +7,7 @@ let localWatchlist = [];
 const storedLocalStorage = JSON.parse(localStorage.getItem("watchlist"))
 
 const getWatchlist = async (movie) => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${api}&t=${movie}`);
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${api}&t=${movie}`);
     const data = await response.json();
     console.log(data);
     getMovie(data);
