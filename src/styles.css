@@ -87,7 +87,7 @@ header{
 }
 
 .movie-poster{
-    width: 45%;
+    width: 30%;
 }
 .movie-poster img{
     width: 100%;
@@ -179,7 +179,7 @@ header{
     }
 
     .movie-poster{
-        width: 35%;
+        width: 45%;
     }
     .movie-information{
         width: 50%;
@@ -189,6 +189,10 @@ header{
 @media only screen and (min-width: 769px) {
     header {
         height: 300px;
+    }
+
+    .movie-poster{
+        width: 45%;
     }
 }
 
