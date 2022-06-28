@@ -38,7 +38,7 @@ const getMovie = (movie) => {
     const genre = createElement('p', { class: ['genre'], text: movie.Genre });
     const watchlist = createElement('div', { class: ['watchlist', 'flex'] });
     const icon = createElement('i', { class: ['fa-solid'], role: 'button', value: movie.Title });
-    localWatchlist.includes(movie.Title) ? icon.classList.add('fa-heart') : icon.classList.add('fa-circle-plus')
+    localWatchlist.includes(movie.imdbID) ? icon.classList.add('fa-heart') : icon.classList.add('fa-circle-plus')
     const span = createElement('p', { text: "Watchlist" });
     watchlist.append(icon, span);
     const moviePlot = createElement('p', { class: ['movie-desc'], text: movie.Plot})
