@@ -41,6 +41,7 @@ const setValue = (event) => {
             const errorMessage = document.getElementById('placeholderText');
             errorMessage.textContent = `No results found for ${searchValue}`
             placeholder.appendChild(errorMessage);
+            searchField.focus();
             searchField.value = '';
         }
     }
