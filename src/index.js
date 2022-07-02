@@ -80,7 +80,7 @@ const getMovie = async ({imdbID}) => {
     
     watchlist.addEventListener('click', () => {
         //If Title is in the local storage then remove
-        if (localWatchlist.includes(Title)) {
+        if (localWatchlist.includes(imdbID)) {
             localWatchlist.pop(imdbID)
             localStorage.setItem("watchlist", JSON.stringify(localWatchlist))
             icon.classList.replace('fa-heart', 'fa-circle-plus');
