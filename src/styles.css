@@ -129,11 +129,16 @@ header{
     flex-basis: 200px;
 }
 
+.movie-additional .genre, .runtime{
+    font-weight: 600;
+}
+
 .watchlist{
     cursor: pointer;
 }
 .watchlist:hover, .watchlist:focus, .watchlist:active{
-    background-color: aqua;
+    /* font-size: 1.1em; */
+    font-weight: 600;
 }
 
 .watchlist p{
@@ -172,6 +177,10 @@ header{
 
     #results{
         width: 470px;
+    }
+
+    #search{
+        width: 350px;
     }
 
     .movie-container{
